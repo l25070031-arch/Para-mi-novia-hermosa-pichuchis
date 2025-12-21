@@ -1,364 +1,436 @@
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>31 Cartas para mi novia  que amo mucho mi princesa dulce💌</title>
-	<style>
-		:root{--bg:#fff7fb;--card:#fff;--accent:#ff4d6d;--muted:#6b6b6b}
-		*{box-sizing:border-box}
-		body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;background:linear-gradient(180deg,#fff,#fff7fc);color:#222}
-		header{padding:24px 16px;text-align:center}
-		h1{margin:0;font-size:clamp(20px,4vw,32px);color:var(--accent)}
-		p.lead{margin:8px 0 0;color:var(--muted)}
-		.controls{margin:16px auto;display:flex;gap:8px;justify-content:center}
-		.btn{background:var(--accent);color:#fff;border:none;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600}
-		.btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent)}
-		.wrap{max-width:1100px;margin:24px auto;padding:0 16px}
-		.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
-		.card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);cursor:pointer;transition:transform .14s}
-		.card:hover{transform:translateY(-6px)}
-		.card h3{margin:0 0 8px;font-size:16px;color:var(--accent)}
-		.card p{margin:0;color:var(--muted);font-size:14px}
-		footer{padding:18px;text-align:center;color:var(--muted)}
-		/* Modal */
-		.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.4);padding:18px;z-index:100;visibility:hidden;opacity:0;transition:opacity .12s}
-		.modal.open{visibility:visible;opacity:1}
-		.sheet{max-width:780px;width:100%;background:#fff;padding:18px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.25);}
-		.sheet header{display:flex;gap:10px;align-items:center;justify-content:space-between}
-		.sheet h2{margin:0;color:var(--accent)}
-		textarea{width:100%;min-height:260px;padding:12px;border-radius:8px;border:1px solid #eee;font-size:16px;resize:vertical}
-		.sheet .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
-		.muted{color:var(--muted);font-size:14px}
-		.small{font-size:13px}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>31 Cartas para mi novia  que amo mucho mi princesa dulce💌</title>
+    <style>
+        :root{--bg:#fff7fb;--card:#fff;--accent:#ff4d6d;--muted:#6b6b6b}
+        *{box-sizing:border-box}
+        body{font-family:Inter, system-ui, Arial, sans-serif;margin:0;background:linear-gradient(180deg,#fff,#fff7fc);color:#222}
+        header{padding:24px 16px;text-align:center}
+        h1{margin:0;font-size:clamp(20px,4vw,32px);color:var(--accent)}
+        p.lead{margin:8px 0 0;color:var(--muted)}
+        .controls{margin:16px auto;display:flex;gap:8px;justify-content:center}
+        .btn{background:var(--accent);color:#fff;border:none;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:600}
+        .btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+        .wrap{max-width:1100px;margin:24px auto;padding:0 16px}
+        .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+        .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);cursor:pointer;transition:transform .14s}
+        .card:hover{transform:translateY(-6px)}
+        .card h3{margin:0 0 8px;font-size:16px;color:var(--accent)}
+        .card p{margin:0;color:var(--muted);font-size:14px}
+        footer{padding:18px;text-align:center;color:var(--muted)}
+        /* Modal */
+        .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.4);padding:18px;z-index:100;visibility:hidden;opacity:0;transition:opacity .12s}
+        .modal.open{visibility:visible;opacity:1}
+        .sheet{max-width:780px;width:100%;background:#fff;padding:18px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.25);}
+        .sheet header{display:flex;gap:10px;align-items:center;justify-content:space-between}
+        .sheet h2{margin:0;color:var(--accent)}
+        textarea{width:100%;min-height:260px;padding:12px;border-radius:8px;border:1px solid #eee;font-size:16px;resize:vertical}
+        .sheet .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+        .muted{color:var(--muted);font-size:14px}
+        .small{font-size:13px}
 
-		@media (max-width:520px){.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
-	</style>
+        @media (max-width:520px){.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
+    </style>
 </head>
 <body>
-	<header>
-		<h1>39 Cartas para mi novia Preciosa, Te extrañoooo no sabes cuanto mi pequeña Joshii :"( 💌</h1>
-	<p class="lead">Haz clic en una carta para leerla, editarla y guardarla. Los cambios se almacenan en tu navegador.</p>
-		<div class="controls">
-			<button class="btn ghost" id="resetAll">Reiniciar todas</button>
-			<button class="btn" id="downloadAll">Descargar todo</button>
-			<button class="btn" id="addCardBtn" style="display:none">Agregar carta</button>
-			<button class="btn ghost" id="loginBtn">Entrar (creador)</button>
-			<button class="btn ghost" id="logoutBtn" style="display:none">Cerrar sesión</button>
-		</div>
-		<div style="text-align:center;margin-top:8px;"><span id="statusCreator" class="muted small">Estado: visitante (solo lectura)</span></div>
-	</header>
+    <header>
+        <h1>39 Cartas para mi novia Preciosa, Te extrañoooo no sabes cuanto mi pequeña Joshii :"( 💌</h1>
+    <p class="lead">Haz clic en una carta para leerla, editarla y guardarla. Los cambios se almacenan en tu navegador.</p>
+        <div class="controls">
+            <button class="btn ghost" id="resetAll">Reiniciar todas</button>
+            <button class="btn" id="downloadAll">Descargar todo</button>
+            <button class="btn" id="exportBtn">Exportar</button>
+            <button class="btn ghost" id="importBtn">Importar</button>
+            <button class="btn ghost" id="shareBtn">Generar enlace</button>
+            <button class="btn" id="addCardBtn" style="display:none">Agregar carta</button>
+            <button class="btn ghost" id="loginBtn">Entrar (creador)</button>
+            <button class="btn ghost" id="logoutBtn" style="display:none">Cerrar sesión</button>
+        </div>
+        <div style="text-align:center;margin-top:8px;"><span id="statusCreator" class="muted small">Estado: visitante (solo lectura)</span></div>
+        <input type="file" id="importFile" accept="application/json" style="display:none">
+    </header>
 
-	<main class="wrap">
-		<section class="grid" id="grid"></section>
-	</main>
+    <main class="wrap">
+        <section class="grid" id="grid"></section>
+    </main>
 
-	<div class="modal" id="modal">
-		<div class="sheet" role="dialog" aria-modal="true">
-			<header>
-				<h2 id="modalTitle">Carta</h2>
-				<div>
-					<button class="btn ghost" id="prevBtn">◀ Anterior</button>
-					<button class="btn ghost" id="nextBtn">Siguiente ▶</button>
-				</div>
-			</header>
-			<main style="margin-top:12px">
-				<div class="muted small">Personaliza tu carta y usa <strong>Guardar</strong> para conservarla en este navegador.</div>
-				<textarea id="content" placeholder="Escribe aquí tu dedicatoria..."></textarea>
-			</main>
-			<div class="actions">
-				<button class="btn ghost" id="resetLetter">Reiniciar carta</button>
+    <div class="modal" id="modal">
+        <div class="sheet" role="dialog" aria-modal="true">
+            <header>
+                <h2 id="modalTitle">Carta</h2>
+                <div>
+                    <button class="btn ghost" id="prevBtn">◀ Anterior</button>
+                    <button class="btn ghost" id="nextBtn">Siguiente ▶</button>
+                </div>
+            </header>
+            <main style="margin-top:12px">
+                <div class="muted small">Personaliza tu carta y usa <strong>Guardar</strong> para conservarla en este navegador.</div>
+                <textarea id="content" placeholder="Escribe aquí tu dedicatoria..."></textarea>
+            </main>
+            <div class="actions">
+                <button class="btn ghost" id="resetLetter">Reiniciar carta</button>
                 <button class="btn ghost" id="deleteBtn" style="display:none">Eliminar</button>
-				<button class="btn" id="downloadBtn">Descargar</button>
-				<button class="btn" id="printBtn">Imprimir</button>
+                <button class="btn" id="downloadBtn">Descargar</button>
+                <button class="btn" id="printBtn">Imprimir</button>
                 <button class="btn" id="saveBtn">Guardar</button>
-				<button class="btn ghost" id="closeBtn">Cerrar</button>
-			</div>
-		</div>
-	</div>
+                <button class="btn ghost" id="closeBtn">Cerrar</button>
+            </div>
+        </div>
+    </div>
 
-	<footer>
-		<div>Hecho con ❤️ para mi niña hermosaaa — ¡Te amooo y con mucho amor y sentimiento te lo hice porque te extraño!</div>
-	</footer>
+    <footer>
+        <div>Hecho con ❤️ para mi niña hermosaaa — ¡Te amooo y con mucho amor y sentimiento te lo hice porque te extraño!</div>
+    </footer>
 
-	<script>
-		const DEFAULT_TOTAL = 30
-		const grid = document.getElementById('grid')
-		const modal = document.getElementById('modal')
-		const content = document.getElementById('content')
-		const modalTitle = document.getElementById('modalTitle')
-		const addCardBtn = document.getElementById('addCardBtn')
-		const loginBtn = document.getElementById('loginBtn')
-		const logoutBtn = document.getElementById('logoutBtn')
-		const statusCreator = document.getElementById('statusCreator')
-		let current = 1
-		let cartas = []
-	let currentUser = sessionStorage.getItem('creator') || null
-	let isCreator = !!currentUser
-			return `Mi amor,\n\nEsta es la carta número ${i}.\n\nTe quiero con todo mi corazón. \n\n— Tu [nombre]`
-		}
+    <script>
+        const DEFAULT_TOTAL = 30
+        const grid = document.getElementById('grid')
+        const modal = document.getElementById('modal')
+        const content = document.getElementById('content')
+        const modalTitle = document.getElementById('modalTitle')
+        const addCardBtn = document.getElementById('addCardBtn')
+        const loginBtn = document.getElementById('loginBtn')
+        const logoutBtn = document.getElementById('logoutBtn')
+        const statusCreator = document.getElementById('statusCreator')
+        let current = 1
+        let cartas = []
+    let currentUser = sessionStorage.getItem('creator') || null
+    let isCreator = !!currentUser
 
-		// Crypto helper to hash password (SHA-256)
-		async function sha256Hex(str){
-			const enc = new TextEncoder().encode(str)
-			const hash = await crypto.subtle.digest('SHA-256', enc)
-			return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('')
-		}
+    function defaultText(i){
+        return `Mi amor,\n\nEsta es la carta número ${i}.\n\nTe quiero con todo mi corazón. \n\n— Tu [nombre]`
+    }
 
-		function saveCartas(){
-			localStorage.setItem('cartas', JSON.stringify(cartas))
-		}
+    // Crypto helper to hash password (SHA-256)
+    async function sha256Hex(str){
+            const enc = new TextEncoder().encode(str)
+            const hash = await crypto.subtle.digest('SHA-256', enc)
+            return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,'0')).join('')
+        }
 
-		function loadCartas(){
-			const raw = localStorage.getItem('cartas')
-			if(raw){
-				try{ cartas = JSON.parse(raw); return }
-				catch(e){ /* fallthrough */ }
-			}
-			// migrate old carta_x keys if present
-			const migrated = []
-			for(let i=1;i<=DEFAULT_TOTAL;i++){
-				const v = localStorage.getItem(`carta_${i}`)
-				if(v != null) migrated.push(v)
-			}
-			if(migrated.length){
-				cartas = migrated
-				saveCartas()
-				// remove old keys
-				for(let i=1;i<=DEFAULT_TOTAL;i++) localStorage.removeItem(`carta_${i}`)
-				return
-			}
-			// default initial
-			cartas = Array.from({length:DEFAULT_TOTAL}, (_,i)=>defaultText(i+1))
-			saveCartas()
-		}
+        function saveCartas(){
+            localStorage.setItem('cartas', JSON.stringify(cartas))
+        }
 
-		function migrateIfNeeded(){
-			if(!Array.isArray(cartas)) loadCartas()
-		}
+        function loadCartas(){
+            const raw = localStorage.getItem('cartas')
+            if(raw){
+                try{ cartas = JSON.parse(raw); return }
+                catch(e){ /* fallthrough */ }
+            }
+            // migrate old carta_x keys if present
+            const migrated = []
+            for(let i=1;i<=DEFAULT_TOTAL;i++){
+                const v = localStorage.getItem(`carta_${i}`)
+                if(v != null) migrated.push(v)
+            }
+            if(migrated.length){
+                cartas = migrated
+                saveCartas()
+                // remove old keys
+                for(let i=1;i<=DEFAULT_TOTAL;i++) localStorage.removeItem(`carta_${i}`)
+                return
+            }
+            // default initial
+            cartas = Array.from({length:DEFAULT_TOTAL}, (_,i)=>defaultText(i+1))
+            saveCartas()
+        }
 
-		function renderGrid(){
-			grid.innerHTML = ''
-			cartas.forEach((txt,i)=>{
-				const n = i+1
-				const div = document.createElement('div')
-				div.className = 'card'
-				div.dataset.n = n
-				const title = document.createElement('h3')
-				title.textContent = `Carta ${n}`
-				const preview = (txt||'').replace(/\n/g,' ').slice(0,80)
-				const p = document.createElement('p')
-				p.textContent = preview || 'Haz clic para ver la carta.'
-				if(!isCreator) {
-					const lock = document.createElement('div')
-					lock.textContent = '🔒 Lectura'
-					lock.className = 'muted small'
-					lock.style.marginTop = '8px'
-					div.appendChild(lock)
-				}
-				div.appendChild(title)
-				div.appendChild(p)
-				div.addEventListener('click',()=>open(n))
-				grid.appendChild(div)
-			})
-			updateAuthUI()
-		}
+        function migrateIfNeeded(){
+            if(!Array.isArray(cartas)) loadCartas()
+        }
 
-		function open(i){
-			current = i
-			modalTitle.textContent = `Carta ${i}`
-			content.value = cartas[i-1] || ''
-			modal.classList.add('open')
-			if(isCreator){
-				content.readOnly = false
-				document.getElementById('saveBtn').style.display = ''
-				document.getElementById('resetLetter').style.display = ''
-				document.getElementById('deleteBtn').style.display = ''
-			} else {
-				content.readOnly = true
-				document.getElementById('saveBtn').style.display = 'none'
-				document.getElementById('resetLetter').style.display = 'none'
-				document.getElementById('deleteBtn').style.display = 'none'
-			}
-			content.focus()
-		}
+        function renderGrid(){
+            grid.innerHTML = ''
+            cartas.forEach((txt,i)=>{
+                const n = i+1
+                const div = document.createElement('div')
+                div.className = 'card'
+                div.dataset.n = n
+                const title = document.createElement('h3')
+                title.textContent = `Carta ${n}`
+                const preview = (txt||'').replace(/\n/g,' ').slice(0,80)
+                const p = document.createElement('p')
+                p.textContent = preview || 'Haz clic para ver la carta.'
+                if(!isCreator) {
+                    const lock = document.createElement('div')
+                    lock.textContent = '🔒 Lectura'
+                    lock.className = 'muted small'
+                    lock.style.marginTop = '8px'
+                    div.appendChild(lock)
+                }
+                div.appendChild(title)
+                div.appendChild(p)
+                div.addEventListener('click',()=>open(n))
+                grid.appendChild(div)
+            })
+            updateAuthUI()
+        }
 
-		function close(){modal.classList.remove('open')}
+        function open(i){
+            current = i
+            modalTitle.textContent = `Carta ${i}`
+            content.value = cartas[i-1] || ''
+            modal.classList.add('open')
+            if(isCreator){
+                content.readOnly = false
+                document.getElementById('saveBtn').style.display = ''
+                document.getElementById('resetLetter').style.display = ''
+                document.getElementById('deleteBtn').style.display = ''
+            } else {
+                content.readOnly = true
+                document.getElementById('saveBtn').style.display = 'none'
+                document.getElementById('resetLetter').style.display = 'none'
+                document.getElementById('deleteBtn').style.display = 'none'
+            }
+            content.focus()
+        }
 
-		// --- Auth ---
-	const DEFAULT_USER = { user: 'creador', pass: 'amor123' } // default credentials (change if you want)
+        function close(){modal.classList.remove('open')}
 
-	function getUsers(){ const raw = localStorage.getItem('creator_users'); return raw ? JSON.parse(raw) : null }
-	function saveUsers(users){ localStorage.setItem('creator_users', JSON.stringify(users)) }
+        // --- Auth ---
+    const DEFAULT_USER = { user: 'creador', pass: 'amor123' } // default credentials (change if you want)
 
-	async function ensureDefaultUser(){
-		const users = getUsers()
-		if(!users || Object.keys(users).length === 0){
-			const h = await sha256Hex(DEFAULT_USER.pass)
-			saveUsers({ [DEFAULT_USER.user]: h })
-			// default user seeded; change DEFAULT_USER above to modify
-		}
-	}
+    function getUsers(){ const raw = localStorage.getItem('creator_users'); return raw ? JSON.parse(raw) : null }
+    function saveUsers(users){ localStorage.setItem('creator_users', JSON.stringify(users)) }
 
-	async function setUser(user, pass){ const h = await sha256Hex(pass); const users = getUsers()||{}; users[user] = h; saveUsers(users) }
-	async function checkUser(user, pass){ const users = getUsers(); if(!users) return false; const h = await sha256Hex(pass); return users[user] === h }
+    async function ensureDefaultUser(){
+        const users = getUsers()
+        if(!users || Object.keys(users).length === 0){
+            const h = await sha256Hex(DEFAULT_USER.pass)
+            saveUsers({ [DEFAULT_USER.user]: h })
+            // default user seeded; change DEFAULT_USER above to modify
+        }
+    }
 
-	function updateAuthUI(){
-		if(isCreator){
-			addCardBtn.style.display = ''
-			loginBtn.style.display = 'none'
-			logoutBtn.style.display = ''
-			statusCreator.textContent = `Estado: creador (puedes editar) — ${currentUser}`
-			statusCreator.style.color = ''
-		} else {
-			addCardBtn.style.display = 'none'
-			loginBtn.style.display = ''
-			logoutBtn.style.display = 'none'
-			statusCreator.textContent = 'Estado: visitante (solo lectura)'
-			statusCreator.style.color = ''
-		}
-	}
+    async function setUser(user, pass){ const h = await sha256Hex(pass); const users = getUsers()||{}; users[user] = h; saveUsers(users) }
+    async function checkUser(user, pass){ const users = getUsers(); if(!users) return false; const h = await sha256Hex(pass); return users[user] === h }
 
-	loginBtn.addEventListener('click', async ()=>{
-		// If no users exist, create one first
-		if(!getUsers() || Object.keys(getUsers()).length === 0){
-			const u = prompt('No hay usuarios. Crea un nombre de usuario (mínimo 3 caracteres):')
-			if(!u || u.length < 3) return alert('Nombre de usuario inválido.')
-			const p = prompt('Crea una nueva contraseña (mínimo 4 caracteres):')
-			if(!p || p.length < 4) return alert('Contraseña inválida.')
-			const c = prompt('Confirma la contraseña:')
-			if(c !== p) return alert('Las contraseñas no coinciden.')
-			await setUser(u,p)
-			alert('Usuario creado. Ahora inicia sesión.')
-		}
-		const u = prompt('Nombre de usuario:')
-		if(!u) return
-		const p = prompt('Contraseña:')
-		if(!p) return
-		if(await checkUser(u,p)){
-			sessionStorage.setItem('creator', u)
-			currentUser = u
-			isCreator = true
-			updateAuthUI()
-			alert(`Has iniciado sesión como ${u}.`)
-		} else alert('Usuario o contraseña incorrectos')
-	})
+    function updateAuthUI(){
+        if(isCreator){
+            addCardBtn.style.display = ''
+            loginBtn.style.display = 'none'
+            logoutBtn.style.display = ''
+            statusCreator.textContent = `Estado: creador (puedes editar) — ${currentUser}`
+            statusCreator.style.color = ''
+        } else {
+            addCardBtn.style.display = 'none'
+            loginBtn.style.display = ''
+            logoutBtn.style.display = 'none'
+            statusCreator.textContent = 'Estado: visitante (solo lectura)'
+            statusCreator.style.color = ''
+        }
+    }
 
-	logoutBtn.addEventListener('click', ()=>{
-		sessionStorage.removeItem('creator')
-		currentUser = null
-			updateAuthUI()
-			alert('Sesión cerrada')
-		})
+    loginBtn.addEventListener('click', async ()=>{
+        // If no users exist, create one first
+        if(!getUsers() || Object.keys(getUsers()).length === 0){
+            const u = prompt('No hay usuarios. Crea un nombre de usuario (mínimo 3 caracteres):')
+            if(!u || u.length < 3) return alert('Nombre de usuario inválido.')
+            const p = prompt('Crea una nueva contraseña (mínimo 4 caracteres):')
+            if(!p || p.length < 4) return alert('Contraseña inválida.')
+            const c = prompt('Confirma la contraseña:')
+            if(c !== p) return alert('Las contraseñas no coinciden.')
+            await setUser(u,p)
+            alert('Usuario creado. Ahora inicia sesión.')
+        }
+        const u = prompt('Nombre de usuario:')
+        if(!u) return
+        const p = prompt('Contraseña:')
+        if(!p) return
+        if(await checkUser(u,p)){
+            sessionStorage.setItem('creator', u)
+            currentUser = u
+            isCreator = true
+            updateAuthUI()
+            alert(`Has iniciado sesión como ${u}.`)
+        } else alert('Usuario o contraseña incorrectos')
+    })
 
-		// --- Card actions ---
-		document.getElementById('saveBtn').addEventListener('click',()=>{
-			if(!isCreator) return alert('Solo el creador puede guardar cambios.')
-			cartas[current-1] = content.value
-			saveCartas()
-			renderGrid()
-			alert('Carta guardada ✅')
-		})
+    logoutBtn.addEventListener('click', ()=>{
+        sessionStorage.removeItem('creator')
+        currentUser = null
+            updateAuthUI()
+            alert('Sesión cerrada')
+        })
 
-		document.getElementById('closeBtn').addEventListener('click',close)
+        // --- Card actions ---
+        document.getElementById('saveBtn').addEventListener('click',()=>{
+            if(!isCreator) return alert('Solo el creador puede guardar cambios.')
+            cartas[current-1] = content.value
+            saveCartas()
+            renderGrid()
+            alert('Carta guardada ✅')
+        })
 
-		document.getElementById('resetLetter').addEventListener('click',()=>{
-			if(!isCreator) return alert('Solo el creador puede reiniciar cartas.')
-			if(confirm('¿Quieres reiniciar esta carta? Se perderán los cambios.')){
-				cartas[current-1] = defaultText(current)
-				saveCartas()
-				content.value = cartas[current-1]
-				renderGrid()
-			}
-		})
+        document.getElementById('closeBtn').addEventListener('click',close)
 
-		document.getElementById('deleteBtn').addEventListener('click',()=>{
-			if(!isCreator) return alert('Solo el creador puede eliminar cartas.')
-			if(confirm('¿Eliminar esta carta? Esta acción no se puede deshacer.')){
-				cartas.splice(current-1,1)
-				// update defaults for following indices
-				for(let i=0;i<cartas.length;i++) if(!cartas[i]) cartas[i] = defaultText(i+1)
-				saveCartas()
-				renderGrid()
-				close()
-			}
-		})
+        document.getElementById('resetLetter').addEventListener('click',()=>{
+            if(!isCreator) return alert('Solo el creador puede reiniciar cartas.')
+            if(confirm('¿Quieres reiniciar esta carta? Se perderán los cambios.')){
+                cartas[current-1] = defaultText(current)
+                saveCartas()
+                content.value = cartas[current-1]
+                renderGrid()
+            }
+        })
 
-		document.getElementById('resetAll').addEventListener('click',()=>{
-			if(!isCreator){
-				return alert('Solo el creador puede reiniciar todas las cartas.')
-			}
-			if(confirm('¿Reiniciar todas las cartas y eliminar todo el contenido guardado?')){
-				cartas = Array.from({length:DEFAULT_TOTAL}, (_,i)=>defaultText(i+1))
-				saveCartas()
-				renderGrid()
-			}
-		})
+        document.getElementById('deleteBtn').addEventListener('click',()=>{
+            if(!isCreator) return alert('Solo el creador puede eliminar cartas.')
+            if(confirm('¿Eliminar esta carta? Esta acción no se puede deshacer.')){
+                cartas.splice(current-1,1)
+                // update defaults for following indices
+                for(let i=0;i<cartas.length;i++) if(!cartas[i]) cartas[i] = defaultText(i+1)
+                saveCartas()
+                renderGrid()
+                close()
+            }
+        })
 
-		addCardBtn.addEventListener('click',()=>{
-			if(!isCreator) return alert('Solo el creador puede agregar cartas.')
-			cartas.push(defaultText(cartas.length+1))
-			saveCartas()
-			renderGrid()
-			open(cartas.length)
-		})
+        document.getElementById('resetAll').addEventListener('click',()=>{
+            if(!isCreator){
+                return alert('Solo el creador puede reiniciar todas las cartas.')
+            }
+            if(confirm('¿Reiniciar todas las cartas y eliminar todo el contenido guardado?')){
+                cartas = Array.from({length:DEFAULT_TOTAL}, (_,i)=>defaultText(i+1))
+                saveCartas()
+                renderGrid()
+            }
+        })
 
-		document.getElementById('nextBtn').addEventListener('click',()=>{
-			if(current < cartas.length) current++
-			else current = 1
-			open(current)
-		})
+        addCardBtn.addEventListener('click',()=>{
+            if(!isCreator) return alert('Solo el creador puede agregar cartas.')
+            cartas.push(defaultText(cartas.length+1))
+            saveCartas()
+            renderGrid()
+            open(cartas.length)
+        })
 
-		document.getElementById('prevBtn').addEventListener('click',()=>{
-			if(current > 1) current--
-			else current = cartas.length
-			open(current)
-		})
+        document.getElementById('nextBtn').addEventListener('click',()=>{
+            if(current < cartas.length) current++
+            else current = 1
+            open(current)
+        })
 
-		document.getElementById('printBtn').addEventListener('click',()=>{
-			const w = window.open('','_blank')
-			w.document.write(`<pre style="white-space:pre-wrap;font-size:18px;font-family:inherit">${escapeHtml(content.value)}</pre>`)
-			w.document.title = `Carta ${current}`
-			w.print()
-		})
+        document.getElementById('prevBtn').addEventListener('click',()=>{
+            if(current > 1) current--
+            else current = cartas.length
+            open(current)
+        })
 
-		function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+        document.getElementById('printBtn').addEventListener('click',()=>{
+            const w = window.open('','_blank')
+            w.document.write(`<pre style="white-space:pre-wrap;font-size:18px;font-family:inherit">${escapeHtml(content.value)}</pre>`)
+            w.document.title = `Carta ${current}`
+            w.print()
+        })
 
-		document.getElementById('downloadBtn').addEventListener('click',()=>{downloadText(`Carta_${current}.txt`, content.value)})
+        function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
 
-		document.getElementById('downloadAll').addEventListener('click',()=>{
-			let all = ''
-			for(let i=0;i<cartas.length;i++){
-				all += `--- Carta ${i+1} ---\n` + (cartas[i]||'') + '\n\n'
-			}
-			downloadText('Cartas.txt', all)
-		})
+        document.getElementById('downloadBtn').addEventListener('click',()=>{downloadText(`Carta_${current}.txt`, content.value)})
 
-		function downloadText(filename, text){
-			const a = document.createElement('a')
-			const blob = new Blob([text],{type:'text/plain;charset=utf-8'})
-			a.href = URL.createObjectURL(blob)
-			a.download = filename
-			document.body.appendChild(a)
-			a.click()
-			a.remove()
-			URL.revokeObjectURL(a.href)
-		}
+        document.getElementById('downloadAll').addEventListener('click',()=>{
+            let all = ''
+            for(let i=0;i<cartas.length;i++){
+                all += `--- Carta ${i+1} ---\n` + (cartas[i]||'') + '\n\n'
+            }
+            downloadText('Cartas.txt', all)
+        })
 
-		// keyboard shortcuts
-		document.addEventListener('keydown', (e)=>{
-			if(modal.classList.contains('open')){
-				if(e.key === 'Escape') close()
-				if(e.key === 's' && (e.ctrlKey||e.metaKey)){ e.preventDefault(); if(isCreator){ cartas[current-1] = content.value; saveCartas(); renderGrid(); alert('Carta guardada ✅') } else alert('Solo el creador puede guardar cambios.') }
-				if(e.key === 'ArrowRight') document.getElementById('nextBtn').click()
-				if(e.key === 'ArrowLeft') document.getElementById('prevBtn').click()
-			}
-		})
+        function downloadText(filename, text){
+            const a = document.createElement('a')
+            const blob = new Blob([text],{type:'text/plain;charset=utf-8'})
+            a.href = URL.createObjectURL(blob)
+            a.download = filename
+            document.body.appendChild(a)
+            a.click()
+            a.remove()
+            URL.revokeObjectURL(a.href)
+        }
 
-		// inicializa
-		migrateIfNeeded()
-		loadCartas()
-		renderGrid()
-	</script>
+        // --- Export / Import / Share helpers ---
+        function encodeBase64Unicode(str){ return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,(m,p)=>String.fromCharCode('0x'+p))); }
+        function decodeBase64Unicode(b64){ return decodeURIComponent(Array.prototype.map.call(atob(b64), c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join('')); }
+
+        function exportCartasToFile(){ downloadText('cartas.json', JSON.stringify(cartas)) }
+
+        function handleImportFile(e){
+            const f = e.target.files && e.target.files[0]
+            if(!f) return
+            const reader = new FileReader()
+            reader.onload = (ev)=>{
+                try{
+                    const parsed = JSON.parse(ev.target.result)
+                    if(!Array.isArray(parsed)) return alert('Archivo inválido.')
+                    if(!confirm('Importar sobrescribirá las cartas actuales. ¿Continuar?')) return
+                    cartas = parsed
+                    saveCartas()
+                    renderGrid()
+                    alert('Cartas importadas ✅')
+                }catch(err){ alert('Error al leer el archivo.') }
+            }
+            reader.readAsText(f)
+            e.target.value = ''
+        }
+
+        document.getElementById('exportBtn').addEventListener('click', exportCartasToFile)
+        document.getElementById('importBtn').addEventListener('click', ()=>document.getElementById('importFile').click())
+        document.getElementById('importFile').addEventListener('change', handleImportFile)
+
+        function generateShareLink(){
+            const json = JSON.stringify(cartas)
+            const encoded = encodeBase64Unicode(json)
+            if(encoded.length > 2000){
+                if(!confirm('El enlace resultante será muy largo y puede no funcionar en algunos navegadores. ¿Deseas continuar?')) return
+            }
+            const url = location.origin + location.pathname + '?shared=' + encodeURIComponent(encoded)
+            if(navigator.clipboard && navigator.clipboard.writeText){
+                navigator.clipboard.writeText(url).then(()=> alert('Enlace copiado al portapapeles ✅'))
+            } else {
+                prompt('Copia el enlace:', url)
+            }
+        }
+
+        document.getElementById('shareBtn').addEventListener('click', generateShareLink)
+
+        function loadSharedFromQuery(){
+            const params = new URLSearchParams(location.search)
+            const shared = params.get('shared')
+            if(!shared) return
+            try{
+                const dec = decodeBase64Unicode(decodeURIComponent(shared))
+                const parsed = JSON.parse(dec)
+                if(!Array.isArray(parsed)) return
+                if(confirm('Se ha encontrado un conjunto compartido. ¿Importar ahora?')){
+                    cartas = parsed
+                    saveCartas()
+                    renderGrid()
+                    history.replaceState(null,'',location.pathname)
+                    alert('Contenido importado ✅')
+                } else {
+                    history.replaceState(null,'',location.pathname)
+                }
+            }catch(err){ console.warn('failed to load shared', err) }
+        }
+
+        // keyboard shortcuts
+        document.addEventListener('keydown', (e)=>{
+            if(modal.classList.contains('open')){
+                if(e.key === 'Escape') close()
+                if(e.key === 's' && (e.ctrlKey||e.metaKey)){ e.preventDefault(); if(isCreator){ cartas[current-1] = content.value; saveCartas(); renderGrid(); alert('Carta guardada ✅') } else alert('Solo el creador puede guardar cambios.') }
+                if(e.key === 'ArrowRight') document.getElementById('nextBtn').click()
+                if(e.key === 'ArrowLeft') document.getElementById('prevBtn').click()
+            }
+        })
+
+        // inicializa
+        migrateIfNeeded()
+        loadCartas()
+        loadSharedFromQuery()
+        ensureDefaultUser().then(()=>renderGrid())
+    </script>
 </body>
 </html>
