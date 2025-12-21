@@ -93,10 +93,8 @@
 		const statusCreator = document.getElementById('statusCreator')
 		let current = 1
 		let cartas = []
-		let isCreator = sessionStorage.getItem('creator') === '1'
-
-		// --- utils ---
-		function defaultText(i){
+	let currentUser = sessionStorage.getItem('creator') || null
+	let isCreator = !!currentUser
 			return `Mi amor,\n\nEsta es la carta número ${i}.\n\nTe quiero con todo mi corazón. \n\n— Tu [nombre]`
 		}
 
@@ -188,48 +186,67 @@
 		function close(){modal.classList.remove('open')}
 
 		// --- Auth ---
-		function hasPassword(){ return !!localStorage.getItem('creator_pw') }
-		async function setPassword(pass){ const h = await sha256Hex(pass); localStorage.setItem('creator_pw', h) }
-		async function checkPassword(pass){ const h = await sha256Hex(pass); return h === localStorage.getItem('creator_pw') }
+	const DEFAULT_USER = { user: 'creador', pass: 'amor123' } // default credentials (change if you want)
 
-		function updateAuthUI(){
-			if(isCreator){
-				addCardBtn.style.display = ''
-				loginBtn.style.display = 'none'
-				logoutBtn.style.display = ''
-				statusCreator.textContent = 'Estado: creador (puedes editar)'
-				statusCreator.style.color = ''
-			} else {
-				addCardBtn.style.display = 'none'
-				loginBtn.style.display = ''
-				logoutBtn.style.display = 'none'
-				statusCreator.textContent = 'Estado: visitante (solo lectura)'
-				statusCreator.style.color = ''
-			}
+	function getUsers(){ const raw = localStorage.getItem('creator_users'); return raw ? JSON.parse(raw) : null }
+	function saveUsers(users){ localStorage.setItem('creator_users', JSON.stringify(users)) }
+
+	async function ensureDefaultUser(){
+		const users = getUsers()
+		if(!users || Object.keys(users).length === 0){
+			const h = await sha256Hex(DEFAULT_USER.pass)
+			saveUsers({ [DEFAULT_USER.user]: h })
+			// default user seeded; change DEFAULT_USER above to modify
 		}
+	}
 
-		loginBtn.addEventListener('click', async ()=>{
-			if(!hasPassword()){
-				const p = prompt('No hay contraseña. Crea una nueva contraseña para el creador (mínimo 4 caracteres):')
-				if(!p || p.length < 4) return alert('Contraseña inválida.');
-				const c = prompt('Confirma la contraseña:')
-				if(c !== p) return alert('Las contraseñas no coinciden.');
-				await setPassword(p)
-				alert('Contraseña creada. Ahora inicia sesión.');
-			}
-			const pass = prompt('Introduce la contraseña del creador:')
-			if(!pass) return
-			if(await checkPassword(pass)){
-				sessionStorage.setItem('creator','1')
-				isCreator = true
-				updateAuthUI()
-				alert('Has iniciado sesión como creador.')
-			} else alert('Contraseña incorrecta')
-		})
+	async function setUser(user, pass){ const h = await sha256Hex(pass); const users = getUsers()||{}; users[user] = h; saveUsers(users) }
+	async function checkUser(user, pass){ const users = getUsers(); if(!users) return false; const h = await sha256Hex(pass); return users[user] === h }
 
-		logoutBtn.addEventListener('click', ()=>{
-			sessionStorage.removeItem('creator')
-			isCreator = false
+	function updateAuthUI(){
+		if(isCreator){
+			addCardBtn.style.display = ''
+			loginBtn.style.display = 'none'
+			logoutBtn.style.display = ''
+			statusCreator.textContent = `Estado: creador (puedes editar) — ${currentUser}`
+			statusCreator.style.color = ''
+		} else {
+			addCardBtn.style.display = 'none'
+			loginBtn.style.display = ''
+			logoutBtn.style.display = 'none'
+			statusCreator.textContent = 'Estado: visitante (solo lectura)'
+			statusCreator.style.color = ''
+		}
+	}
+
+	loginBtn.addEventListener('click', async ()=>{
+		// If no users exist, create one first
+		if(!getUsers() || Object.keys(getUsers()).length === 0){
+			const u = prompt('No hay usuarios. Crea un nombre de usuario (mínimo 3 caracteres):')
+			if(!u || u.length < 3) return alert('Nombre de usuario inválido.')
+			const p = prompt('Crea una nueva contraseña (mínimo 4 caracteres):')
+			if(!p || p.length < 4) return alert('Contraseña inválida.')
+			const c = prompt('Confirma la contraseña:')
+			if(c !== p) return alert('Las contraseñas no coinciden.')
+			await setUser(u,p)
+			alert('Usuario creado. Ahora inicia sesión.')
+		}
+		const u = prompt('Nombre de usuario:')
+		if(!u) return
+		const p = prompt('Contraseña:')
+		if(!p) return
+		if(await checkUser(u,p)){
+			sessionStorage.setItem('creator', u)
+			currentUser = u
+			isCreator = true
+			updateAuthUI()
+			alert(`Has iniciado sesión como ${u}.`)
+		} else alert('Usuario o contraseña incorrectos')
+	})
+
+	logoutBtn.addEventListener('click', ()=>{
+		sessionStorage.removeItem('creator')
+		currentUser = null
 			updateAuthUI()
 			alert('Sesión cerrada')
 		})
