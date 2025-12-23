@@ -31,7 +31,7 @@
         .sheet .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
         .muted{color:var(--muted);font-size:14px}
         .small{font-size:13px}
-        
+
         @media (max-width:520px){.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
     </style>
 </head>
@@ -379,7 +379,7 @@
         document.getElementById('exportBtn').addEventListener('click', exportCartasToFile)
         document.getElementById('importBtn').addEventListener('click', ()=>document.getElementById('importFile').click())
         document.getElementById('importFile').addEventListener('change', handleImportFile)
-        
+
         function generateShareLink(){
             const json = JSON.stringify(cartas)
             const encoded = encodeBase64Unicode(json)
@@ -431,12 +431,6 @@
         loadCartas()
         loadSharedFromQuery()
         ensureDefaultUser().then(()=>renderGrid())
-   
     </script>
 </body>
-
 </html>
-
-
-
-
