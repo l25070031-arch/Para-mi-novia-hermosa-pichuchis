@@ -379,8 +379,7 @@
         document.getElementById('exportBtn').addEventListener('click', exportCartasToFile)
         document.getElementById('importBtn').addEventListener('click', ()=>document.getElementById('importFile').click())
         document.getElementById('importFile').addEventListener('change', handleImportFile)
-
-        <button class="btn" onclick="saveShare()" style="position:fixed;bottom:16px;right:16px">Compartir 💌</button>
+        
         function generateShareLink(){
             const json = JSON.stringify(cartas)
             const encoded = encodeBase64Unicode(json)
@@ -432,8 +431,10 @@
         loadCartas()
         loadSharedFromQuery()
         ensureDefaultUser().then(()=>renderGrid())
+   <button class="btn" onclick="saveShare()" style="position:fixed;bottom:16px;right:16px">Compartir 💌</button>
     </script>
 </body>
 
 </html>
+
 
